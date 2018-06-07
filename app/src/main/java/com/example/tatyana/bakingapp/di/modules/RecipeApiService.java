@@ -1,15 +1,15 @@
 package com.example.tatyana.bakingapp.di.modules;
 
-
 import com.example.tatyana.bakingapp.api.Api;
+import com.example.tatyana.bakingapp.mvp.RecipeService;
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import retrofit2.Retrofit;
-@Module(includes = RetrofitModule.class)
-public class ApiModule {
+
+@Module(includes = ApiModule.class)
+public class RecipeApiService {
     @Provides
     @Singleton
-    public Api provideApi(Retrofit retrofit){return retrofit.create(Api.class);}
+    public RecipeService provideService(Api api){return new RecipeService(api);}
 }

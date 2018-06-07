@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.tatyana.bakingapp.R;
+import com.example.tatyana.bakingapp.app.App;
 import com.example.tatyana.bakingapp.model.Recipe;
 
 import java.util.List;
@@ -21,10 +22,11 @@ import butterknife.ButterKnife;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>{
     private List<Recipe> recipes;
-    @Inject
-    private Context context;
+    //@Inject
+    Context context = App.appComponent.provideContext();
     public void setRecipes(List<Recipe> recipes){
         this.recipes = recipes;
+        notifyDataSetChanged();
     }
     @NonNull
     @Override
@@ -40,15 +42,15 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
     @Override
     public int getItemCount() {
-        return recipes.size();
+        return recipes == null ? 0 : recipes.size();
     }
 
     class RecipeViewHolder extends RecyclerView.ViewHolder{
         @BindView(R.id.foodName)
-        private TextView foodName;
+        TextView foodName;
         public RecipeViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

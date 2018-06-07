@@ -1,7 +1,10 @@
 package com.example.tatyana.bakingapp.mvp.views;
 
 import com.arellomobile.mvp.MvpView;
+import com.example.tatyana.bakingapp.model.Recipe;
+
+import java.util.List;
 
 public interface HomeView extends MvpView{
-    void loadRecipies();
+    void setData(List<Recipe> recipeList);
 }
