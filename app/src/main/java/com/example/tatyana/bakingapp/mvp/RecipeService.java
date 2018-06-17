@@ -1,7 +1,7 @@
 package com.example.tatyana.bakingapp.mvp;
 
 import com.example.tatyana.bakingapp.api.Api;
-import com.example.tatyana.bakingapp.model.Recipe;
+import com.example.tatyana.bakingapp.model.bean.Recipe;
 
 import java.util.List;
 

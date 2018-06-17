@@ -1,5 +1,5 @@
 
-package com.example.tatyana.bakingapp.model;
+package com.example.tatyana.bakingapp.model.bean;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

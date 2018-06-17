@@ -1,6 +1,18 @@
 package com.example.tatyana.bakingapp.ui.activities;
 
-import com.arellomobile.mvp.MvpAppCompatActivity;
+import android.os.Bundle;
 
-public class RecipeActivity extends MvpAppCompatActivity {
+import com.arellomobile.mvp.MvpAppCompatActivity;
+import com.example.tatyana.bakingapp.R;
+
+import butterknife.ButterKnife;
+
+public class RecipeActivity extends MvpAppCompatActivity{
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+    }
+
 }

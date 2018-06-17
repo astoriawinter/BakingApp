@@ -1,17 +1,12 @@
 package com.example.tatyana.bakingapp.mvp.presenters;
 
-import android.content.Context;
-
 import com.arellomobile.mvp.InjectViewState;
-import com.arellomobile.mvp.MvpPresenter;
 import com.example.tatyana.bakingapp.app.App;
-import com.example.tatyana.bakingapp.model.Recipe;
+import com.example.tatyana.bakingapp.model.bean.Recipe;
 import com.example.tatyana.bakingapp.mvp.RecipeService;
 import com.example.tatyana.bakingapp.mvp.views.HomeView;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 import rx.Observer;
 import rx.Subscription;

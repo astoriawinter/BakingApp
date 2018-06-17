@@ -1,8 +1,8 @@
 package com.example.tatyana.bakingapp.ui.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +11,10 @@ import android.widget.TextView;
 
 import com.example.tatyana.bakingapp.R;
 import com.example.tatyana.bakingapp.app.App;
-import com.example.tatyana.bakingapp.model.Recipe;
+import com.example.tatyana.bakingapp.model.bean.Recipe;
+import com.example.tatyana.bakingapp.ui.activities.RecipeActivity;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,6 +37,9 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
         Recipe recipe = recipes.get(position);
         holder.foodName.setText(recipe.getName());
+        holder.foodName.setOnClickListener(click ->
+                context.startActivity(new Intent(context, RecipeActivity.class)
+                        .putExtra("id", recipe.getId())));
     }
 
     @Override
